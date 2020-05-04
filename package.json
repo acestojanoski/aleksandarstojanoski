@@ -1,0 +1,46 @@
+{
+  "name": "aleksandarstojanoski",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env AS_ENV=prod next build",
+    "start": "cross-env AS_ENV=prod next start",
+    "export": "cross-env AS_ENV=prod next export",
+    "dev": "cross-env AS_ENV=dev next",
+    "xo": "xo"
+  },
+  "keywords": [],
+  "author": "Aleksandar Stojanoski",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "bulma": "^0.8.2",
+    "next": "^9.3.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "webpack": "^4.43.0",
+    "xo": "^0.30.0"
+  },
+  "xo": {
+    "prettier": "true",
+    "rules": {
+      "no-unused-vars": "warn",
+      "import/no-unassigned-import": "off",
+      "import/extensions": "off",
+      "unicorn/filename-case": "off",
+      "no-undef": "off"
+    }
+  }
+}
