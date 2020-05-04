@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env AS_ENV=prod next build",
     "start": "cross-env AS_ENV=prod next start",
-    "export": "cross-env AS_ENV=prod next export",
+    "export": "cross-env AS_ENV=prod next build && next export",
     "dev": "cross-env AS_ENV=dev next",
     "xo": "xo"
   },
