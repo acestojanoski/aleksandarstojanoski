@@ -1,6 +1,5 @@
 .title, .subtitle {
     letter-spacing: .2rem;
-    word-break: keep-all;
 }
 
 @media screen and (min-width: 1024px) {
