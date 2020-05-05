@@ -1,5 +1,5 @@
 const envConfig = require('dotenv').config({
-	path: `./env/client/.env.${process.env.AS_ENV}`,
+	path: `./env/client/env.${process.env.AS_ENV}`,
 });
 
 const webpack = require('webpack');

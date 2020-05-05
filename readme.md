@@ -4,6 +4,10 @@
 
 Built using Next.js
 
+## Url
+
+[`https://aleksandarstojanoski.now.sh`](https://aleksandarstojanoski.now.sh)
+
 ## dependencies
 * react
 * react-dom

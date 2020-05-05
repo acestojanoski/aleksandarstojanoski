@@ -1,8 +1,8 @@
-import react, {useEffect, useState} from 'react';
+import react, {useState} from 'react';
 import Loading from './Loading';
 import apiCall from '../utils/api-call';
 import env from '../utils/env';
-import useDocumentInfiniteScroll from '../hooks/use-document-infinite-scroll';
+import useWindowInfiniteScroll from '../hooks/use-window-infinite-scroll';
 
 const GithubRepos = () => {
 	const [data, setData] = useState(null);
@@ -32,9 +32,7 @@ const GithubRepos = () => {
 			.finally(() => setLoading(false));
 	};
 
-	useEffect(loadRepositories, []);
-
-	useDocumentInfiniteScroll(loadRepositories, pageInfo.hasNextPage, [
+	useWindowInfiniteScroll(loadRepositories, pageInfo.hasNextPage, [
 		repositories,
 	]);
 
@@ -65,7 +63,7 @@ const GithubRepos = () => {
 							} = repository;
 
 							return (
-								<div key={name} className="column is-half">
+								<div key={name} className="column is-half repo">
 									<h2 className="subtitle has-text-weight-bold">
 										<a href={url}>{name}</a>
 										<span
@@ -102,6 +100,10 @@ const GithubRepos = () => {
 
 					.tag {
 						color: #ffffff;
+					}
+
+					.repo:hover {
+						background-color: #efefef;
 					}
 				`}</style>
 			</div>

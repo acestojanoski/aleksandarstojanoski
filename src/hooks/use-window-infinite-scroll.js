@@ -7,14 +7,15 @@ const useDocumentInfiniteScroll = (
 ) => {
 	const handleScroll = () => {
 		const scrollEnd =
-			document.documentElement.offsetHeight +
-				document.documentElement.scrollTop >=
+			window.innerHeight + document.documentElement.scrollTop >=
 			document.documentElement.scrollHeight;
 
 		if (scrollEnd && hasNextPage) {
 			handler();
 		}
 	};
+
+	useEffect(handler, []);
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);

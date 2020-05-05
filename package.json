@@ -4,10 +4,11 @@
   "description": "My personal website",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env AS_ENV=prod next build",
-    "start": "cross-env AS_ENV=prod next start",
-    "export": "cross-env AS_ENV=prod next build && next export",
     "dev": "cross-env AS_ENV=dev next",
+    "start": "next start",
+    "build:prod": "cross-env AS_ENV=prod next build",
+    "export:prod": "cross-env AS_ENV=prod next build && next export",
+    "deploy:prod": "now --prod",
     "xo": "xo"
   },
   "keywords": [],
@@ -40,7 +41,8 @@
       "import/no-unassigned-import": "off",
       "import/extensions": "off",
       "unicorn/filename-case": "off",
-      "no-undef": "off"
+      "no-undef": "off",
+      "capitalized-comments": "off"
     }
   }
 }
