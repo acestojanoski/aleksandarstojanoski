@@ -8,7 +8,7 @@ const useDocumentInfiniteScroll = (
 	const handleScroll = () => {
 		const scrollEnd =
 			window.innerHeight + document.documentElement.scrollTop >=
-			document.documentElement.scrollHeight;
+			document.documentElement.scrollHeight - 5;
 
 		if (scrollEnd && hasNextPage) {
 			handler();

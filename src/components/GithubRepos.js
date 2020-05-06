@@ -88,7 +88,7 @@ const GithubRepos = () => {
 						})}
 						{loading && pageInfo.endCursor ? (
 							<div className="column is-full">
-								<p>Loading...</p>
+								<div className="spinner" />
 							</div>
 						) : null}
 					</div>
@@ -104,6 +104,10 @@ const GithubRepos = () => {
 
 					.repo:hover {
 						background-color: #efefef;
+					}
+
+					.spinner {
+						margin: 0 auto;
 					}
 				`}</style>
 			</div>
