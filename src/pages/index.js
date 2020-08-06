@@ -1,12 +1,12 @@
-import react from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import env from '../utils/env';
 
-const HomePage = () => {
+const IndexPage = () => {
 	return (
 		<>
 			<Head>
@@ -20,7 +20,9 @@ const HomePage = () => {
 								<h1 className="title">Aleksandar Stojanoski</h1>
 							</div>
 							<div className="column">
-								<h2 className="subtitle">Web Developer</h2>
+								<h2 className="subtitle">
+									Full Stack Developer
+								</h2>
 							</div>
 							<div className="column">
 								<span className="icon">
@@ -67,5 +69,5 @@ const HomePage = () => {
 	);
 };
 
-HomePage.displayName = 'HomePage';
-export default HomePage;
+IndexPage.displayName = 'IndexPage';
+export default IndexPage;

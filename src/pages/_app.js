@@ -1,8 +1,10 @@
+import React from 'react';
 import 'bulma/css/bulma.min.css';
 import '../styles/main.css';
 
-const App = ({Component, pageProps}) => {
+// eslint-disable-next-line react/prop-types
+const AleksandarStojanoski = ({Component, pageProps}) => {
 	return <Component {...pageProps} />;
 };
 
-export default App;
+export default AleksandarStojanoski;

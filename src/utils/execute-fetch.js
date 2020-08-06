@@ -1,4 +1,4 @@
-class HttpError extends Error {
+export class HttpError extends Error {
 	constructor(mappedResponse) {
 		super(mappedResponse.statusText);
 
@@ -10,13 +10,15 @@ class HttpError extends Error {
 	}
 }
 
-export default async (...args) => {
+const executeFetch = async (...args) => {
 	const response = await fetch(...args);
 
 	let body = await response.text();
 
 	try {
-		body = JSON.parse(body);
+		if (response.headers.get('content-type').includes('application/json')) {
+			body = JSON.parse(body);
+		}
 	} catch {}
 
 	const mappedResponse = {
@@ -31,3 +33,5 @@ export default async (...args) => {
 
 	throw new HttpError(mappedResponse);
 };
+
+export default executeFetch;

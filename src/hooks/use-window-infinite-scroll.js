@@ -1,26 +1,27 @@
-import {useEffect} from 'react';
+import {useEffect, useCallback} from 'react';
 
-const useDocumentInfiniteScroll = (
-	handler,
-	hasNextPage,
-	dependencyArray = []
-) => {
-	const handleScroll = () => {
+const useWindowInfiniteScroll = ({handler, hasNextPage, loading, data}) => {
+	const handleScroll = useCallback(() => {
 		const scrollEnd =
 			window.innerHeight + document.documentElement.scrollTop >=
 			document.documentElement.scrollHeight - 5;
 
-		if (scrollEnd && hasNextPage) {
+		if (scrollEnd && hasNextPage && !loading) {
 			handler();
 		}
-	};
+	}, [loading, hasNextPage]);
 
-	useEffect(handler, []);
+	useEffect(() => {
+		handler();
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, [...dependencyArray]);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [handleScroll, data]);
 };
 
-export default useDocumentInfiniteScroll;
+export default useWindowInfiniteScroll;

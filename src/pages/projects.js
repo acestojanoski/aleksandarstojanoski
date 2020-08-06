@@ -1,7 +1,7 @@
-import react from 'react';
-import Layout from '../components/Layout';
+import React from 'react';
+import Layout from '../components/layout';
 import Head from 'next/head';
-import GithubRepos from '../components/GithubRepos';
+import GithubRepos from '../components/github-repos';
 
 const ProjectsPage = () => {
 	return (

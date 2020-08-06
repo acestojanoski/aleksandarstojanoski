@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Loading = ({show, overlay, ...rest}) => {
@@ -89,8 +90,10 @@ const Loading = ({show, overlay, ...rest}) => {
 };
 
 Loading.propTypes = {
+	/* eslint-disable react/boolean-prop-naming */
 	show: PropTypes.bool,
 	overlay: PropTypes.bool,
+	/* eslint-enable react/boolean-prop-naming */
 };
 
 Loading.displayName = 'Loading';
